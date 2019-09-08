@@ -1,0 +1,8 @@
+.email-login-link:hover,
+.email-login-link:active,
+.email-login-link:focus,
+.email-login-link{
+    color:#3dbdc2;
+    
+    letter-spacing: 1px;
+}

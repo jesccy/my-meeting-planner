@@ -1,0 +1,35 @@
+<div class="box-body-wrap">
+    <div class="container">
+        <div class="inner-box-body-wrap">
+            <div class="top-btns">
+                <a class="nav-link top-box-links" [routerLink]="['/user/signup']">
+                    <span class="fa fa-arrow-left"></span>
+                    Sign Up
+                </a>
+            </div>
+            <div class="logo-wrap text-center">
+                <img src="./../../../assets/images/logo.png" alt="Meeting Planner" />
+            </div>
+            <form id="loginform" class="login-form-wrapper">
+                <div class="input-group mb-3">
+                    <input type="email" id="inputEmail" [(ngModel)]="email" class="form-control"
+                        placeholder="Email address" name="email" required autofocus>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" id="inputPassword" [(ngModel)]="password"
+                        (keydown)="loginUsingKeypress($event)" name="password" class="form-control"
+                        placeholder="Password" required>
+                    <a class="nav-link f-password" [routerLink]="['/user/forgot-password']">Forgot
+                        password?</a>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12 controls">
+                        <button id="btn-signin" type="button" class="btn btn-primary" (click)="signInFunction()">
+                            Sign In
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

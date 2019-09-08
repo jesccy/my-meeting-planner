@@ -1,0 +1,9 @@
+.nav-link.f-password {
+    display: block;
+    padding: .5rem 0px;
+    width: 100%;
+    text-align: right;
+    font-size: 14px;
+    color: #38b4b9;
+    font-weight: 600;
+}

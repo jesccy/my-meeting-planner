@@ -1,0 +1,11 @@
+
+.footer-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.copyright-text-wrap {
+  background: #55cdb7;
+  color: #fff;
+  padding: 5px 0px;
+}

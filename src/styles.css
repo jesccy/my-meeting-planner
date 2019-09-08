@@ -1,0 +1,524 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+body,
+p,
+span,
+label,
+html,
+input,
+textarea {
+  font-family: "Roboto", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 .btn,
+.btn.btn-primary {
+  font-family: "Oswald", sans-serif;
+}
+.box-body-wrap {
+  background-image: linear-gradient(to bottom, #54eaf0, #4ddce2, #46cfd4, #3fc1c7, #38b4b9);
+  height: calc(100vh - 28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-box-body-wrap {
+  max-width: 450px;
+  background: #fbfbfb;
+  padding: 1.4em;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 6px #828282;
+}
+.logo-wrap {
+  margin-bottom: 1em;
+}
+body .form-control {
+  font-size: 14px;
+  background: #fff;
+  height: 35px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+}
+.btn.btn-primary {
+  color: #fff;
+  background-color: #38b4b9;
+  border: 2px solid #38b4b9;
+
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 2px;
+  border-radius: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  transition: all 0.4s;
+}
+.btn.btn-primary:active,
+.btn.btn-primary:focus,
+.btn.btn-primary:hover {
+  border: 2px solid #38b4b9;
+  background: transparent;
+  color: #38b4b9;
+}
+.top-btns > * {
+  display: inline-block;
+  vertical-align: middle;
+  color: #38b4b9;
+}
+.nav-link.top-box-links {
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #38b4b9;
+  padding: 0px 10px;
+}
+.alert.alert-danger {
+  font-size: 12px;
+  padding: 0px 0px;
+  background: transparent;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 0px;
+  border: 0px;
+}
+.alert.alert-danger > div {
+  display: inline-flex;
+  background: #38b4b9;
+  padding: 3px 7px;
+}
+.pd-right-0 {
+  padding-right: 0px !important;
+}
+.pd-left-0 {
+  padding-left: 0px !important;
+}
+#btnGroupDropUserInfo,
+body select,
+form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("./assets/images/down-arrow.png") no-repeat !important;
+  background-position: 95% center !important;
+  background-size: 15px !important;
+}
+.input-group > * {
+  height: 35px;
+}
+.input-group .input-group-text {
+  border-radius: 0px;
+}
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+} /* Webkit browsers like Safari and Chrome */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/********Admin Dashboard******/
+.header-wrapper {
+  background: #fbfbff;
+}
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background: #fbfbfb;
+  z-index: 999;
+}
+.dashboard-body-wrap {
+  background-image: linear-gradient(to bottom, #54eaf0, #4ddce2, #46cfd4, #3fc1c7, #38b4b9);
+  height: calc(100vh - 75px);
+  margin-top: 47px;
+}
+.own-navbar {
+  padding-bottom: 0px !important;
+}
+.btn-circle:focus,
+.btn-circle:active,
+.btn-circle:hover {
+  box-shadow: none !important;
+}
+.btn-circle {
+  background: #38b4b9 !important;
+  border-color: #38b4b9 !important;
+  color: #fff !important;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+.calendar-btn .calendarText {
+  font-size: 14px;
+  line-height: 30px;
+  vertical-align: middle;
+  background: #38b4b9;
+  color: #fff;
+  display: inline-flex;
+  padding: 0px 10px;
+}
+.form-control.yearbtn {
+  width: 100px;
+  padding: 6px 10px;
+}
+#btnGroupDropUserInfo {
+  text-transform: capitalize;
+}
+#btnGroupDropUserInfo:hover,
+#btnGroupDropUserInfo:active,
+#btnGroupDropUserInfo:focus,
+#btnGroupDropUserInfo {
+  border: 0px solid;
+  padding: 5px 29px 6px 5px;
+  color: #38b4b9;
+  font-weight: 600;
+  font-family: "Oswald";
+}
+.desktop-user-lists {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  background: #fbfbfb !important;
+}
+.list-group-item {
+  text-transform: capitalize;
+}
+#inputUserName {
+}
+.meeting-user-text {
+  background-color: #17a2b8 !important;
+  color: #fff;
+  padding: 5px;
+}
+.meeting-user-text span {
+  font-family: "Oswald";
+  font-weight: 600;
+  color: #fff !important;
+  text-transform: capitalize;
+}
+.user-meeting-info {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.cal-month-view .cal-day-cell {
+  min-height: 92px !important;
+}
+.cal-month-view .cal-day-number {
+  color: #000 !important;
+  opacity: 1 !important;
+}
+.fixed-bottom .btn.btn-danger.btn-circle.btn-lg {
+  background: #259125 !important;
+  border-color: #259125 !important;
+}
+body .user-meeting-info {
+  border-bottom: 0px solid !important;
+}
+.cal-month-view .cal-day-badge {
+  padding: 0px !important;
+  vertical-align: middle !important;
+  display: inline-block !important;
+  border-radius: 50% !important;
+  width: 30px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+}
+.people-list {
+  height: calc(100vh - 111px);
+  overflow-y: scroll;
+}
+.cal-day-view .cal-ends-within-day .cal-event {
+  border-radius: 0px !important;
+}
+.cal-day-view .cal-event a,
+.cal-day-view .cal-event {
+  color: #000;
+}
+
+/*********
+*Modal Content
+*****/
+.modal-content .card {
+  box-shadow: 0px 0px 2px #ccc;
+
+  border-radius: 0px;
+}
+.modal-content .card-body {
+  background: #fbfbfb;
+  border: 0px solid aliceblue;
+  border-radius: 0px;
+}
+.modal-header {
+  background: #38b4b9;
+  color: #fff;
+  font-family: "Oswald";
+  text-transform: uppercase;
+}
+.modal-content .close {
+  opacity: 1;
+  color: #fff;
+}
+.modal-content span {
+  background: #fff;
+  color: #38b4b9;
+  width: 40px;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+}
+.card-img-top {
+  display: none;
+}
+.card-body h5 {
+  text-transform: uppercase;
+}
+.card-body h5 {
+  text-transform: uppercase;
+  color: #24b7c4;
+  font-family: "Oswald";
+}
+.update-meeting-wrap .card {
+  background: transparent;
+  border: 0px solid;
+  box-shadow: none;
+  margin: 1em 0em 1em;
+}
+.update-meeting-wrap .card-header {
+  background: #e6e6e6;
+  border-radius: 0px;
+  color: #38b4b9;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Oswald";
+}
+.card-inner {
+  background: #fbfbfb;
+  box-shadow: 0px 0px 3px #fff;
+  height: 100%;
+}
+.update-meeting-wrap .card-header {
+  margin-bottom: 0px !important;
+}
+.fa.fa-calendar {
+  color: #38b4b9;
+  margin-left: 10px;
+}
+.time-wrapper label,
+.time-wrapper .form-heading {
+  width: 90px;
+  display: inline-block;
+}
+textarea {
+  resize: none !important;
+}
+.time-wrapper {
+  margin-bottom: 10px;
+}
+.btns-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.update-meeting-wrap .alert.alert-danger {
+  margin-bottom: 0px;
+}
+.update-meeting-wrap .card-header h4 {
+  margin-bottom: 0px !important;
+  font-size: 1rem !important;
+  letter-spacing: 1px;
+}
+#btn-finalize {
+  background: #fff;
+  border: 2px solid #fff;
+  color: #38b4b9;
+  transition: all 0.4s ease-in-out;
+  border-radius: 0px !important;
+}
+#btn-finalize:hover,
+#btn-finalize:focus,
+#btn-finalize:active {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.create-meeting-wrapper {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+.dashboard-body-wrap.create-meeting-wrap .row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.row.create-meeting-inner-wrapper {
+  padding-top: 2em;
+}
+.create-meeting-wrap .nav.nav-tabs {
+  border: 0px solid !important;
+}
+.create-meeting-wrap .nav.nav-tabs .nav-item .nav-link {
+  color: #000;
+  background: #fbfbfb;
+  border-bottom: 2px solid #ccc;
+  display: block;
+  border-radius: 0px;
+}
+.create-meeting-wrap .nav.nav-tabs .nav-item {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+.create-meeting-wrap .nav.nav-tabs .nav-item .nav-link {
+  color: #38b4b9;
+  background: #fbfbfb;
+  border-bottom: 3px solid #38b4b9;
+  display: block;
+  border-radius: 0px;
+  text-transform: uppercase;
+  font-family: "Oswald";
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 10px 25px;
+  cursor: pointer;
+}
+.create-meeting-wrap .nav.nav-tabs .nav-item .nav-link:focus,
+.create-meeting-wrap .nav.nav-tabs .nav-item .nav-link:active,
+.create-meeting-wrap .nav.nav-tabs .nav-item .nav-link:hover {
+  background: #fff;
+}
+.meeting-steps .tab-pane {
+  background: #fbfbfb;
+}
+.meeting-steps .tab-pane .form-control {
+  /* margin-bottom: 20px; */
+  margin-top: 20px;
+}
+.meeting-steps .card {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.125) !important;
+  border-radius: 0px !important;
+  padding: 5px 10px !important;
+}
+.d-block.font-adjust-heading {
+  text-transform: capitalize;
+}
+.selected-user-wrap .card-body {
+  padding: 0px;
+}
+.selected-user-title {
+  text-transform: capitalize;
+}
+.meeting-steps .tab-pane {
+  padding: 2em;
+}
+.meeting-steps .tab-pane .col-12 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.selected-user {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+button.close {
+  padding: 10px !important;
+}
+.owl-dt-inline-container .owl-dt-calendar,
+.owl-dt-popup-container .owl-dt-calendar {
+  height: 18.25em;
+}
+.meeting-info-wrapper .card-body > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.meeting-info-wrapper .card-body h5 {
+  margin-bottom: 0px;
+  padding-right: 10px;
+  width: 140px;
+}
+.meeting-info-wrapper .card-body p {
+}
+.modal-footer {
+  justify-content: center !important;
+}
+.modal-footer #btn-finalize {
+  border-radius: 0px !important;
+  border: 2px solid #38b4b9;
+  background: #38b4b9;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Oswald";
+  letter-spacing: 1px;
+}
+.modal-footer #btn-finalize:hover {
+  color: #38b4b9;
+  background: transparent;
+}
+.btn.btn-info.rounded {
+  text-transform: uppercase;
+  font-family: "Oswald";
+  letter-spacing: 1px;
+  border-radius: 0px !important;
+}
+.dropdown-menu.dropdown-menu-right {
+  padding: 0px;
+  border-radius: 0px;
+  background: #38b4b9;
+  color: #fff;
+  font-family: "Oswald";
+  text-transform: uppercase;
+}
+.dropdown-menu.dropdown-menu-right a.dropdown-item {
+  border-bottom: 2px solid #fff;
+}
+.dropdown-menu.dropdown-menu-right a.dropdown-item:hover {
+  background: #fff;
+  color: #38b4b9;
+  cursor: pointer;
+}
+.sigin-404-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  color: #fff;
+}
+#btn-signin {
+  color: #fff !important;
+}
+#btn-signin:hover,
+#btn-signin:active,
+#btn-signin:focus {
+  color: #38b4b9 !important;
+}
+.btn.btn-light.current-day {
+  margin-right: 10px;
+  background: #38b4b9;
+  border: 1px solid #38b4b9 !important;
+  border-radius: 30px !important;
+  width: 100px;
+  text-transform: capitalize;
+  font-size: 13px;
+  color: #fff;
+}
+@media only screen and (min-width: 1600px) {
+  body .people-list {
+    height: calc(100vh - 140px);
+    overflow-y: scroll;
+  }
+  .cal-month-view .cal-day-cell {
+    min-height: 15.5vh !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .pd-right-0 {
+    padding-right: 15px !important;
+  }
+  .pd-left-0 {
+    padding-left: 15px !important;
+  }
+}
