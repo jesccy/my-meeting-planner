@@ -1,0 +1,999 @@
+define({ "api": [
+  {
+    "group": "Meetings",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/meetings/:meetingId/details",
+    "title": "api for getting meeting details.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingId",
+            "description": "<p>meetingId of the Meeting. (query params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>Authentication Token. (body/header/query params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{ \n    \"error\": false,\n    \"message\": \"Meeting Found\",\n    \"status\": 200,\n     \"data\": {\n        \"__v\": 0,\n        \"_id\": \"5d6bf2fcb301c01878396e62\",\n        \"createdOn\": \"2019-09-01T16:34:04.000+00:00\",\n        \"meetingPlace\": \"Delhi\",\n        \"meetingDescription\": \"Test Meeting for Meeting Planner App\",\n        \"meetingEndDate\": \"2018-09-12T17:57:50.382Z\",\n        \"meetingStartDate\": \"2018-09-11T20:30:00.000Z\",\n        \"participantEmail\": \"jaspreet380@gmail.com\",\n        \"participantName\": \"Ashish\",\n        \"participantId\": \"WRAOdZ4LP\",\n        \"hostName\": \"Jaspreet\",\n        \"hostId\": \"WRAOdZ4LP\",\n        \"meetingTopic\": \"Test Meeting\",\n        \"meetingId\": \"zfihCBjRI\"\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/meeting.js",
+    "groupTitle": "Meetings",
+    "name": "GetApiV1MeetingsMeetingidDetails"
+  },
+  {
+    "group": "Meetings",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/meetings/view/all/meetings/:userId",
+    "title": "api for Getting all Meetings of User.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (query params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>Authentication Token. (body/header/query params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Meetings Found\",\n    \"status\": 200,\n    \"data\": [\n         {\n        \"__v\": 0,\n        \"_id\": \"5d6bf2fcb301c01878396e62\",\n        \"createdOn\": \"2019-09-01T16:34:04.000+00:00\",\n        \"meetingPlace\": \"Delhi\",\n        \"meetingDescription\": \"Test Meeting for Meeting Planner App\",\n        \"meetingEndDate\": \"2018-09-12T17:57:50.382Z\",\n        \"meetingStartDate\": \"2018-09-11T20:30:00.000Z\",\n        \"participantEmail\": \"jaspreet380@gmail.com\",\n        \"participantName\": \"Ashish\",\n        \"participantId\": \"WRAOdZ4LP\",\n        \"hostName\": \"Jaspreet\",\n        \"hostId\": \"WRAOdZ4LP\",\n        \"meetingTopic\": \"Test Meeting\",\n        \"meetingId\": \"zfihCBjRI\"\n    }\n    ]\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/meeting.js",
+    "groupTitle": "Meetings",
+    "name": "GetApiV1MeetingsViewAllMeetingsUserid"
+  },
+  {
+    "group": "Meetings",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/meetings/addMeeting",
+    "title": "api to Add Meeting.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>Authentication Token. (body/header/query params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingTopic",
+            "description": "<p>Topic of the Meeting. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "hostId",
+            "description": "<p>User Id of the user hosting Meeting. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "hostName",
+            "description": "<p>User Name of the user hosting Meeting. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "participantId",
+            "description": "<p>User Id of the participant. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "participantName",
+            "description": "<p>User Name of the participant. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "participantEmail",
+            "description": "<p>Email of the participant. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingStartDate",
+            "description": "<p>Start date/time of Meeting. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingEndDate",
+            "description": "<p>end date/time of Meeting. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingDescription",
+            "description": "<p>Description of Meeting. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingPlace",
+            "description": "<p>Place of Meeting. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Meeting Created\",\n    \"status\": 200,\n    \"data\": {\n        \"__v\": 0,\n        \"_id\": \"5d6bf2fcb301c01878396e62\",\n        \"createdOn\": \"2019-09-01T16:34:04.000+00:00\",\n        \"meetingPlace\": \"Delhi\",\n        \"meetingDescription\": \"Test Meeting for Meeting Planner App\",\n        \"meetingEndDate\": \"2018-09-12T17:57:50.382Z\",\n        \"meetingStartDate\": \"2018-09-11T20:30:00.000Z\",\n        \"participantEmail\": \"jaspreet380@gmail.com\",\n        \"participantName\": \"Ashish\",\n        \"participantId\": \"WRAOdZ4LP\",\n        \"hostName\": \"Jaspreet\",\n        \"hostId\": \"WRAOdZ4LP\",\n        \"meetingTopic\": \"Test Meeting\",\n        \"meetingId\": \"zfihCBjRI\"\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/meeting.js",
+    "groupTitle": "Meetings",
+    "name": "PostApiV1MeetingsAddmeeting"
+  },
+  {
+    "group": "Meetings",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/meetings/admin-meetings/sentReminders",
+    "title": "api for sending reminders to the users of the meeting.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the User. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>Authentication Token. (body/header/query params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{ \n    \"error\": false,\n    \"message\": \"Meetings Found and reminders sent\",\n    \"status\": 200,\n    \"data\": null\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/meeting.js",
+    "groupTitle": "Meetings",
+    "name": "PostApiV1MeetingsAdminMeetingsSentreminders"
+  },
+  {
+    "group": "Meetings",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/meetings/:meetingId/delete",
+    "title": "api to Delete Meeting.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingId",
+            "description": "<p>meetingId of the Meeting to be deleted. (query params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>Authentication Token. (body/header/query params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Meeting Deleted\",\n    \"status\": 200,\n    \"data\": {\n        \"error\": false,\n        \"message\": \"Deleted the Meeting successfully\",\n        \"status\": 200,\n         \"data\": {\n        \"__v\": 0,\n        \"_id\": \"5d6bf2fcb301c01878396e62\",\n        \"createdOn\": \"2019-09-01T16:34:04.000+00:00\",\n        \"meetingPlace\": \"Delhi\",\n        \"meetingDescription\": \"Test Meeting for Meeting Planner App\",\n        \"meetingEndDate\": \"2018-09-12T17:57:50.382Z\",\n        \"meetingStartDate\": \"2018-09-11T20:30:00.000Z\",\n        \"participantEmail\": \"jaspreet380@gmail.com\",\n        \"participantName\": \"Ashish\",\n        \"participantId\": \"WRAOdZ4LP\",\n        \"hostName\": \"Jaspreet\",\n        \"hostId\": \"WRAOdZ4LP\",\n        \"meetingTopic\": \"Test Meeting\",\n        \"meetingId\": \"zfihCBjRI\"\n    }\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/meeting.js",
+    "groupTitle": "Meetings",
+    "name": "PostApiV1MeetingsMeetingidDelete"
+  },
+  {
+    "group": "Meetings",
+    "version": "1.0.0",
+    "type": "put",
+    "url": "/api/v1/meetings/:meetingId/updateMeeting",
+    "title": "api to Update Meeting Details.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>Authentication Token. (body/header/query params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingId",
+            "description": "<p>Id of the Meeting. (query params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingTopic",
+            "description": "<p>Topic of the Meeting. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingStartDate",
+            "description": "<p>Start date/time of Meeting. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingEndDate",
+            "description": "<p>end date/time of Meeting. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingDescription",
+            "description": "<p>Description of Meeting. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "meetingPlace",
+            "description": "<p>Place of Meeting. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Meeting Updated\",\n    \"status\": 200,\n    \"data\": {\n        \"error\": false,\n        \"message\": \"Meeting details Updated\",\n        \"status\": 200,\n        \"data\": \"None\"\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/meeting.js",
+    "groupTitle": "Meetings",
+    "name": "PutApiV1MeetingsMeetingidUpdatemeeting"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/users/:userId/details",
+    "title": "api for getting user details.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (query params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>authToken of the user. (query/body/header params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"User Details Found\",\n    \"status\": 200,\n    \"data\": {\n     \n            \"emailVerified\": \"Yes\",\n            \"validationToken\": \"Null\",\n            \"email\": \"jaspreet3480@gmail.com\",\n            \"isAdmin\": \"true\",\n            \"telephone\": \"+91 8725838433\",\n            \"country\": \"India\",\n            \"userName\": \"jass5220-admin\",\n            \"lastName\": \"Preet\",\n            \"firstName\": \"Jass\",\n            \"userId\": \"KXy-n6z0i\"\n    \n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "GetApiV1UsersUseridDetails"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/users/view/all",
+    "title": "api for Getting all users.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>authToken of the user. (query/body/header params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"All User Details Found\",\n    \"status\": 200,\n    \"data\": [\n       \n            \"emailVerified\": \"Yes\",\n            \"validationToken\": \"Null\",  \n            \"email\": \"jaspreet3480@gmail.com\",\n            \"isAdmin\": \"true\",\n            \"telephone\": \"+91 8725838433\",\n            \"country\": \"India\",\n            \"userName\": \"jass5220-admin\",\n            \"lastName\": \"Preet\",\n            \"firstName\": \"Jass\",\n            \"userId\": \"KXy-n6z0i\"\n      \n    ]\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "GetApiV1UsersViewAll"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/changePassword",
+    "title": "api for Changing Password.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "oldPassword",
+            "description": "<p>old Password of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "newPassword",
+            "description": "<p>new Password of the user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Password Update Successfully\",\n    \"status\": 200,\n    \"data\": \"None\"\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersChangepassword"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/login",
+    "title": "api for Login.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password of the user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Login Successful\",\n    \"status\": 200,\n    \"data\": {\n       \"authToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RpZCI6IjNEVFEtNGU5WSIsImlhdCI6MTU2NzM1ODEwNjM5MywiZXhwIjoxNTY3NDQ0NTA2LCJzdWIiOiJhdXRoVG9rZW4iLCJpc3MiOiJsZXRzTWVldEFwcCIsImRhdGEiOnsidXNlcklkIjoiN0xiOXVKeVdFIiwiZmlyc3ROYW1lIjoicm9oYW4iLCJsYXN0TmFtZSI6InNoYXJtYSIsInVzZXJOYW1lIjoicm9oYW4xMjMtYWRtaW4iLCJjb3VudHJ5IjoiIiwidGVsZXBob25lIjoiIiwiaXNBZG1pbiI6InRydWUiLCJzdGF0dXMiOiJvZmZsaW5lIiwiZW1haWwiOiJyb2hhbnNoYXJtYUBnbWFpbC5jb20iLCJ2YWxpZGF0aW9uVG9rZW4iOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcWQzUnBaQ0k2SW10TFZ6RnNNbFkxZHlJc0ltbGhkQ0k2TVRVMk56STROVE13T0RBNE1pd2laWGh3SWpveE5UWTNNemN4TnpBNExDSnpkV0lpT2lKaGRYUm9WRzlyWlc0aUxDSnBjM01pT2lKc1pYUnpUV1ZsZEVGd2NDSXNJbVJoZEdFaU9uc2lkWE5sY2tsa0lqb2lOMHhpT1hWS2VWZEZJaXdpWm1seWMzUk9ZVzFsSWpvaWNtOW9ZVzRpTENKc1lYTjBUbUZ0WlNJNkluTm9ZWEp0WVNJc0luVnpaWEpPWVcxbElqb2ljbTlvWVc0eE1qTXRZV1J0YVc0aUxDSmpiM1Z1ZEhKNUlqb2lJaXdpZEdWc1pYQm9iMjVsSWpvaUlpd2lhWE5CWkcxcGJpSTZJblJ5ZFdVaUxDSnpkR0YwZFhNaU9pSnZabVpzYVc1bElpd2ljR0Z6YzNkdmNtUWlPaUlrTW1Ja01UQWtSakZSUW01aWQzaFVURlkzYWxwMFZXbHFRa0ZGTG1KTGVHWkhTMHBsT1hKbGVVbEdOVkJ1Vm5sSVdtaHpkalZuWjFsVWFtMGlMQ0psYldGcGJDSTZJbkp2YUdGdWMyaGhjbTFoUUdkdFlXbHNMbU52YlNJc0luWmhiR2xrWVhScGIyNVViMnRsYmlJNklpSXNJbVZ0WVdsc1ZtVnlhV1pwWldRaU9pSlpaWE1pTENKamNtVmhkR1ZrVDI0aU9pSXlNREU1TFRBNExUTXhWREV3T2pBd09qQXpMakF3TUZvaUxDSmZhV1FpT2lJMVpEWmhORFV5TXpaa1pHVTBOVEV3WVRCa01HRXdNRE1pTENKZlgzWWlPakI5ZlEuMWlZY3ppMHNoS1BtT3hyYjBZbWhLSk9BZklvaDNHT3FNTl9jTzl2UlpCcyIsImVtYWlsVmVyaWZpZWQiOiJZZXMifX0.QGd4G1TowQASAwJwK1eF8L1KgozYm0h-0LxvmCs4GPU\",\n    \"userDetails\": {\n            \"emailVerified\": \"Yes\",\n            \"validationToken\": \"Null\",\n            \"email\": \"jaspreet3480@gmail.com\",\n            \"isAdmin\": \"true\",\n            \"telephone\": \"+91 8725838433\",\n            \"country\": \"India\",\n            \"userName\": \"jass5220-admin\",\n            \"lastName\": \"Preet\",\n            \"firstName\": \"Jass\",\n            \"userId\": \"KXy-n6z0i\"\n        }\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersLogin"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/resetPassword",
+    "title": "api for Password Reset.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email of the user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Password reset instructions sent successfully\",\n    \"status\": 200,\n    \"data\": None\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersResetpassword"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/signup",
+    "title": "api for Registering User.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>First Name of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>Last Name of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userName",
+            "description": "<p>userName of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "country",
+            "description": "<p>country Name of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "telephone",
+            "description": "<p>Mobile Number of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "isAdmin",
+            "description": "<p>String(true/false) true-if user is admin and false-if user is not admin. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password of the user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\"error\": false,\n\"message\": \"User Addded\",\n\"status\": 200,\n\"data\": [\n    {\n        \"createdOn\": \"2019-08-29T23:47:53.000+00:00\",\n        \"emailVerified\": \"Yes\",\n        \"validationToken\": \"Null\",\n        \"email\": \"jaspreet3480@gmail.com\",\n        \"password\": \"$2b$10$lgUysYyA471D1MMJDmtB/uZ4TbtRpgFtzSUz4dnZx2spDepo1wsV.\",\n        \"isAdmin\": \"true\",\n        \"telephone\": \"+91 8725838433\",\n        \"country\": \"India\",\n        \"userName\": \"Jass5220-admin\",\n        \"lastName\": \"Preet\",\n        \"firstName\": \"Jass\",\n        \"userId\": \"KXy-n6z0i\"\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersSignup"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/:userId/delete",
+    "title": "api to Delete User.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (query params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>authToken of the user. (query/body/header params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Deleted the user successfully\",\n    \"status\": 200,\n    \"data\": {\n        \"authToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RpZCI6IjNEVFEtNGU5WSIsImlhdCI6MTU2NzM1ODEwNjM5MywiZXhwIjoxNTY3NDQ0NTA2LCJzdWIiOiJhdXRoVG9rZW4iLCJpc3MiOiJsZXRzTWVldEFwcCIsImRhdGEiOnsidXNlcklkIjoiN0xiOXVKeVdFIiwiZmlyc3ROYW1lIjoicm9oYW4iLCJsYXN0TmFtZSI6InNoYXJtYSIsInVzZXJOYW1lIjoicm9oYW4xMjMtYWRtaW4iLCJjb3VudHJ5IjoiIiwidGVsZXBob25lIjoiIiwiaXNBZG1pbiI6InRydWUiLCJzdGF0dXMiOiJvZmZsaW5lIiwiZW1haWwiOiJyb2hhbnNoYXJtYUBnbWFpbC5jb20iLCJ2YWxpZGF0aW9uVG9rZW4iOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcWQzUnBaQ0k2SW10TFZ6RnNNbFkxZHlJc0ltbGhkQ0k2TVRVMk56STROVE13T0RBNE1pd2laWGh3SWpveE5UWTNNemN4TnpBNExDSnpkV0lpT2lKaGRYUm9WRzlyWlc0aUxDSnBjM01pT2lKc1pYUnpUV1ZsZEVGd2NDSXNJbVJoZEdFaU9uc2lkWE5sY2tsa0lqb2lOMHhpT1hWS2VWZEZJaXdpWm1seWMzUk9ZVzFsSWpvaWNtOW9ZVzRpTENKc1lYTjBUbUZ0WlNJNkluTm9ZWEp0WVNJc0luVnpaWEpPWVcxbElqb2ljbTlvWVc0eE1qTXRZV1J0YVc0aUxDSmpiM1Z1ZEhKNUlqb2lJaXdpZEdWc1pYQm9iMjVsSWpvaUlpd2lhWE5CWkcxcGJpSTZJblJ5ZFdVaUxDSnpkR0YwZFhNaU9pSnZabVpzYVc1bElpd2ljR0Z6YzNkdmNtUWlPaUlrTW1Ja01UQWtSakZSUW01aWQzaFVURlkzYWxwMFZXbHFRa0ZGTG1KTGVHWkhTMHBsT1hKbGVVbEdOVkJ1Vm5sSVdtaHpkalZuWjFsVWFtMGlMQ0psYldGcGJDSTZJbkp2YUdGdWMyaGhjbTFoUUdkdFlXbHNMbU52YlNJc0luWmhiR2xrWVhScGIyNVViMnRsYmlJNklpSXNJbVZ0WVdsc1ZtVnlhV1pwWldRaU9pSlpaWE1pTENKamNtVmhkR1ZrVDI0aU9pSXlNREU1TFRBNExUTXhWREV3T2pBd09qQXpMakF3TUZvaUxDSmZhV1FpT2lJMVpEWmhORFV5TXpaa1pHVTBOVEV3WVRCa01HRXdNRE1pTENKZlgzWWlPakI5ZlEuMWlZY3ppMHNoS1BtT3hyYjBZbWhLSk9BZklvaDNHT3FNTl9jTzl2UlpCcyIsImVtYWlsVmVyaWZpZWQiOiJZZXMifX0.QGd4G1TowQASAwJwK1eF8L1KgozYm0h-0LxvmCs4GPU\",\n     \"userDetails\": {\n            \"emailVerified\": \"Yes\",\n            \"validationToken\": \"Null\",\n            \"email\": \"jaspreet3480@gmail.com\",\n            \"isAdmin\": \"true\",\n            \"telephone\": \"+91 8725838433\",\n            \"country\": \"India\",\n            \"userName\": \"jass5220-admin\",\n            \"lastName\": \"Preet\",\n            \"firstName\": \"Jass\",\n            \"userId\": \"KXy-n6z0i\"\n        }\n           }        \n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersUseridDelete"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/:userId/logout",
+    "title": "api to logout from application.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (query params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>authToken of the user. (query/body/header params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Logged Out Successfully\",\n    \"status\": 200,\n    \"data\": null\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersUseridLogout"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "put",
+    "url": "/api/v1/users/updatePassword",
+    "title": "api for Updating Password after Reset.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "validationToken",
+            "description": "<p>validationToken of the user recieved on Email. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>new password of the user . (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Password Update Successfully\",\n    \"status\": 200,\n    \"data\": \"None\"\n    \n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PutApiV1UsersUpdatepassword"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "put",
+    "url": "/api/v1/users/:userId/edit",
+    "title": "api for Updating User Details.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>authToken of the user. (query/body/header params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (query params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>First Name of the user. (body params) (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>Last Name of the user. (body params) (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "telephone",
+            "description": "<p>Mobile Number of the user. (body params) (optional)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"User details Updated\",\n    \"status\": 200,\n    \"data\": \"None\"\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PutApiV1UsersUseridEdit"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "put",
+    "url": "/api/v1/users/verifyEmail",
+    "title": "api for Verifying User Email Id.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"User email verified\",\n    \"status\": 200,\n    \"data\": \"None\"\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PutApiV1UsersVerifyemail"
+  }
+] });
