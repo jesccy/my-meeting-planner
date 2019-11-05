@@ -20,7 +20,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
-    "mongoose": "^5.6.11",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "mustache": "^3.0.3",
     "nodemailer": "^6.3.0",
